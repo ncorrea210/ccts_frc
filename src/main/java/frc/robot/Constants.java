@@ -172,4 +172,13 @@ public final class Constants {
     public static final double kIntakeLongBarLength = 0.3048;
     public static final double kIntakeBarAngleRads = Units.degreesToRadians(-60);
   }
+
+  public static final class GroundCoralConstants {
+    public static final int kRotateMotorID = -1;
+    public static final int kLeftIntakeID = -1;
+    public static final int kRightIntakeID = -1;
+
+    public static final double kIntakeSpeed = 0.5;
+    public static final double kOuttakeSpeed = -1.0;
+  }
 }

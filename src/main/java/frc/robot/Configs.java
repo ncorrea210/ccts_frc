@@ -138,4 +138,25 @@ public final class Configs {
       intakeConfig.inverted(true).idleMode(IdleMode.kBrake).smartCurrentLimit(40);
     }
   }
+
+  public static final class GroundCoralSubsystem {
+    public static final SparkMaxConfig rotateConfig = new SparkMaxConfig();
+    public static final SparkMaxConfig leftIntakeConfig = new SparkMaxConfig();
+    public static final SparkMaxConfig rightIntakeConfig = new SparkMaxConfig();
+
+    static {
+      rotateConfig.smartCurrentLimit(40).idleMode(IdleMode.kBrake);
+
+      rotateConfig
+          .closedLoop
+          .feedbackSensor(FeedbackSensor.kAbsoluteEncoder)
+          .p(0.1)
+          .i(0.0)
+          .d(0.0)
+          .outputRange(-0.5, 0.5);
+
+      leftIntakeConfig.smartCurrentLimit(30).idleMode(IdleMode.kBrake);
+      rightIntakeConfig.smartCurrentLimit(30).idleMode(IdleMode.kBrake).inverted(true);
+    }
+  }
 }
